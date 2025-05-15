@@ -156,17 +156,17 @@ void QueryInternalInfoCallback(livox_status status, uint32_t handle,
 }
 
 void LidarInfoChangeCallback(const uint32_t handle, const LivoxLidarInfo* info, void* client_data) {
-  if (info == nullptr) {
-    printf("lidar info change callback failed, the info is nullptr.\n");
-    return;
-  } 
-  printf("LidarInfoChangeCallback Lidar handle: %u SN: %s\n", handle, info->sn);
-    printf("Lidar IP: %s\n", info->lidar_ip);
+  // if (info == nullptr) {
+  //   printf("lidar info change callback failed, the info is nullptr.\n");
+  //   return;
+  // } 
+  // printf("LidarInfoChangeCallback Lidar handle: %u SN: %s\n", handle, info->sn);
+  //   printf("Lidar IP: %s\n", info->lidar_ip);
   
-  // set the work mode to kLivoxLidarNormal, namely start the lidar
-  SetLivoxLidarWorkMode(handle, kLivoxLidarNormal, WorkModeCallback, nullptr);
+  // // set the work mode to kLivoxLidarNormal, namely start the lidar
+  // SetLivoxLidarWorkMode(handle, kLivoxLidarNormal, WorkModeCallback, nullptr);
 
-  QueryLivoxLidarInternalInfo(handle, QueryInternalInfoCallback, nullptr);
+  // QueryLivoxLidarInternalInfo(handle, QueryInternalInfoCallback, nullptr);
 
   // LivoxLidarIpInfo lidar_ip_info;
   // strcpy(lidar_ip_info.ip_addr, "192.168.1.10");
@@ -190,7 +190,7 @@ int main(int argc, const char *argv[]) {
   }
   const std::string path = argv[1];
 
-  //DisableLivoxSdkConsoleLogger();
+  DisableLivoxSdkConsoleLogger();
   SaveLivoxLidarSdkLoggerFile();
   // REQUIRED, to get a handle to targeted lidar and set its work mode to NORMAL
   SetLivoxLidarInfoChangeCallback(LidarInfoChangeCallback, nullptr);

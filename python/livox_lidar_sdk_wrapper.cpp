@@ -77,6 +77,8 @@ bool LivoxLidarSdkInitFromCfgWrapper(const PyLivoxLidarNetCfg& py_cfg) {
     cfg.host_imu_data_port = py_cfg.host_imu_data_port;
     cfg.host_log_data_port = py_cfg.host_log_data_port;
 
+    DisableLivoxSdkConsoleLogger();
+    SaveLivoxLidarSdkLoggerFile();
     return LivoxLidarSdkInitFromCfg(cfg);
 }
 
