@@ -1,3 +1,9 @@
 .vscode
 build
 build_vs
+
+log/*
+!log/.gitkeep
+
+data/*
+!log/.gitkeep
