@@ -1,3 +1,17 @@
+'''
+**************************************************************************
+
+* @file         start.py
+* @author       Wei Wang -> shaxikai@outlook.com
+* @date         2025.4.23
+* @version      V1.0.0"
+* @brief        livox sdk python demo
+
+"*************************************************************************
+'''
+
+
+
 import sys
 import time
 import numpy as np
