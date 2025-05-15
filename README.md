@@ -20,7 +20,7 @@ sudo apt install pybind11-dev
 mkdir build
 cd build
 cmake CMAKE_BUILD_TYPE:STRING=Relsease ..
-make -j$(jproc)
+make -j$(nproc)
 python ../samples/livox_python/start.py
 ```
 
